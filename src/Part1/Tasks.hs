@@ -12,7 +12,7 @@ myCos = notImplementedYet
 
 -- наибольший общий делитель двух чисел
 myGCD :: Integer -> Integer -> Integer
-myGCD = notImplementedYet
+myGCD a b = if b /= 0 then abs (myGCD b (mod a b)) else abs a
 
 -- является ли дата корректной с учётом количества дней в месяце и
 -- вискокосных годов?
@@ -22,19 +22,25 @@ isDateCorrect = notImplementedYet
 -- возведение числа в степень, duh
 -- готовые функции и плавающую арифметику использовать нельзя
 myPow :: Integer -> Integer -> Integer
-myPow = notImplementedYet
+myPow a 0 = 1
+myPow a 1 = a
+myPow a n = a * myPow a (n - 1)
 
 -- является ли данное число простым?
 isPrime :: Integer -> Bool
-isPrime = notImplementedYet
+isPrime 1 = True
+isPrime 2 = True
+isPrime x = isPrimeAcc x (floor (sqrt (fromInteger x)))
+isPrimeAcc :: Integer -> Integer -> Bool
+isPrimeAcc x 1 = True
+isPrimeAcc x curr = if (rem x curr) == 0 then False else isPrimeAcc x (curr - 1)
 
 type Point2D = (Double, Double)
 
 -- рассчитайте площадь многоугольника по формуле Гаусса
 -- многоугольник задан списком координат
 shapeArea :: [Point2D] -> Double
---shapeArea points = notImplementedYet
-shapeArea = notImplementedYet
+shapeArea points = notImplementedYet
 
 -- треугольник задан длиной трёх своих сторон.
 -- функция должна вернуть

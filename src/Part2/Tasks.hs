@@ -13,10 +13,13 @@ data Term = IntConstant { intValue :: Int }          -- числовая кон�
 -- ассоциативность и приоритет
 (|+|) :: Term -> Term -> Term
 (|+|) = notImplementedYet
+infixr 6 |+|
 (|-|) :: Term -> Term -> Term
 (|-|) = notImplementedYet
+infixr 6 |-|
 (|*|) :: Term -> Term -> Term
 (|*|) = notImplementedYet
+infixr 7 |*|
 
 -- Заменить переменную `varName` на `replacement`
 -- во всём выражении `expression`
